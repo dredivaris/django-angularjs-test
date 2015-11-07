@@ -117,3 +117,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 AUTH_USER_MODEL = 'authentication.Account'
+
+# shell plus settings
+SHELL_PLUS = "ipython"
+SHELL_PLUS_POST_IMPORTS = (
+    ('authentication.serializers', '*'),
+)
