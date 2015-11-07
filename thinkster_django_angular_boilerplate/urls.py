@@ -14,4 +14,3 @@ urlpatterns = patterns(
 
   url('^.*$', IndexView.as_view(), name='index'),
 )
-
