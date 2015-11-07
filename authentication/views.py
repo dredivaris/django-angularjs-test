@@ -6,8 +6,8 @@ from authentication.models import Account
 from authentication.permissions import IsAccountOwner
 from authentication.serializers import AccountSerializer
 
-
 from django.shortcuts import render
+
 
 class AccountViewSet(viewsets.ModelViewSet):
   lookup_field = 'username'
@@ -15,7 +15,7 @@ class AccountViewSet(viewsets.ModelViewSet):
   serializer_class = AccountSerializer
 
   def get_permissions(self):
-    if self.request.metho in permissions.SAFE_METHODS:
+    if self.request.method in permissions.SAFE_METHODS:
       return (permissions.AllowAny(),)
 
     if self.request.method == 'POST':
