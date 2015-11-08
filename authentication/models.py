@@ -53,6 +53,9 @@ class Account(AbstractBaseUser):
   USERNAME_FIELD = 'email'
   REQUIRED_FIELDS = ['username']
 
+  class Meta:
+    get_latest_by = "created_at"
+
   def __unicode__(self):
     return self.email
 
