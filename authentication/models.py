@@ -15,6 +15,11 @@ class AccountManager(BaseUserManager):
       email=self.normalize_email(email), username=kwargs.get('username')
     )
 
+    if kwargs.get('first_name'):
+      account.first_name = kwargs.get('first_name')
+    if kwargs.get('last_name'):
+      account.last_name = kwargs.get('last_name')
+
     account.set_password(password)
     account.save()
 
