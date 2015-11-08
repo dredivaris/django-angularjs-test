@@ -23,7 +23,7 @@
     * @memberOf thinkster.authentication.controllers.RegisterController
     */
     function register() {
-      Authenication.register(vm.email, vm.password, vm.username);
+      Authentication.register(vm.email, vm.password, vm.username);
     }
   }
 })();
