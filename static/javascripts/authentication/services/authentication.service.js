@@ -56,7 +56,7 @@
      * @desc Log the new user in
      */
     function registerSuccessFn(data, status, headers, config) {
-      Authentication.login(email, password)
+      Authentication.login(data.email, data.password)
     }
 
     /**
@@ -64,7 +64,7 @@
      * @desc Log the new user in
      */
     function registerErrorFn(data, status, headers, config) {
-      console.error('Epic failure!');
+      console.error('Epic failure!', data, status, headers, config);
     }
 
     /**
@@ -76,7 +76,7 @@
      * @memberOf thinkster.authentication.services.Authentication
      */
     function login(email, password) {
-      return $http.post('/api/v1/auth/login', {
+      return $http.post('/api/v1/auth/login/', {
         email: email, password: password
       }).then(loginSuccessFn, loginErrorFn);
     }
@@ -96,7 +96,7 @@
      * @desc Log "Epic failure!" to the console
      */
     function loginErrorFn(data, status, headers, config) {
-      console.error('Epic failure!');
+      console.error('Epic failure!', data, status, headers, config);
     }
 
     /**

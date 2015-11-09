@@ -6,7 +6,7 @@
   'use strict';
 
   angular
-      .module('thinster.authentication.controllers')
+      .module('thinkster.authentication.controllers')
       .controller('LoginController', LoginController);
 
   LoginController.$inject = ['$location', '$scope', 'Authentication'];
@@ -30,7 +30,6 @@
       // If the user is authenticated, they should not be here
       if (Authentication.isAuthenticated()) {
         $location.url('/');
-
       }
     }
 
