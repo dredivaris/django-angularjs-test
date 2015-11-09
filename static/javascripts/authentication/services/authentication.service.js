@@ -48,7 +48,23 @@
         last_name: last_name,
         password: password,
         email: email
-      });
+      }).then(registerSuccessFn, registerErrorFn);
+    }
+
+    /**
+     * @name registerSuccessFn
+     * @desc Log the new user in
+     */
+    function registerSuccessFn(data, status, headers, config) {
+      Authentication.login(email, password)
+    }
+
+    /**
+     * @name registerSuccessFn
+     * @desc Log the new user in
+     */
+    function registerErrorFn(data, status, headers, config) {
+      console.error('Epic failure!');
     }
 
     /**
